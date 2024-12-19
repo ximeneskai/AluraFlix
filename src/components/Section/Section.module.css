@@ -1,0 +1,9 @@
+.container {
+    background-color: #262626;
+}
+
+.carrossel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}

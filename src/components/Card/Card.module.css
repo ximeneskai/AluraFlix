@@ -1,0 +1,28 @@
+.container {
+    padding: 0.3em;
+    border-radius: 2%;
+    margin-top: .5em;
+    height: 22em;
+    width: 27em;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.capa {
+    width: 27em;
+    height: 19em;
+    border-radius: 3%;
+    object-fit: fill; /* A imagem vai preencher todo o espaço, mesmo que distorça */
+}
+
+.container h2 {
+    margin: 1px;
+    text-align: center;
+    color: white;
+}
+
+.link {
+    text-decoration: none;
+}

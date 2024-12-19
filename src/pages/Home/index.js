@@ -9,7 +9,15 @@ function Home() {
         <>
             <Header />
             <Banner />
-            <Section />
+            <Section 
+                titulo={'FILMES'}
+            />
+            <Section 
+                titulo={'SÉRIES'}
+            />
+            <Section 
+            titulo={'NOVELAS'}
+            />
             <Footer />
         
         </>
