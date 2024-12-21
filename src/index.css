@@ -1,9 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  background-color: #262626;;
+  font-family: 'Roboto', 'Source Sans 3', 'BlinkMacSystemFont', sans-serif;
+  background-color: #262626;
 }
 
 code {
