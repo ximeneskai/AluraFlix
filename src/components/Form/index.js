@@ -1,32 +1,42 @@
 import { useState } from 'react';
-import styles from  './Form.module.css'
+import styles from './Form.module.css';
 import Card from '../Card';
+import { useCards } from '../../context/CardContext';
 
 function Form() {
     const [formData, setFormData] = useState({
         titulo: '',
         categoria: '',
         imagem: '',
-        video:'',
-        descricao:''
+        video: '',
+        descricao: ''
     });
 
-    const [cards, setCards] = useState([]);
+    const { addCard } = useCards();
 
+    // Função para lidar com as mudanças nos campos do formulário
     const handleChange = (e) => {
-        e.preventDefault();
+        const { name, value } = e.target;
+        setFormData(prevData => ({
+            ...prevData,
+            [name]: value
+        }));
+    };
 
-        setCards([...cards, formData]);
-
+    // Função para adicionar o card ao estado
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Previne o comportamento padrão do formulário (recarregar a página)
+        addCard(formData);
         setFormData({
             titulo: "",
             categoria: "",
-            imagem: '',
-            video: '',
-            descricao: ''
+            imagem: "",
+            video: "",
+            descricao: ""
         });
     };
 
+    // Função para resetar o formulário
     const handleReset = () => {
         setFormData({
             titulo: "",
@@ -36,13 +46,13 @@ function Form() {
             descricao: ""
         });
     };
-    return (
 
+    return (
         <div className={styles.container}>
             <h1 className={styles.title}>NOVO VÍDEO</h1>
             <p className={styles.subtitle}>Complete o formulário para criar um novo card de vídeo.</p>
             
-            <form className={styles.form} onSubmit={''}>
+            <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.field}>
                     <label htmlFor="titulo">Título</label>
                     <input
@@ -61,7 +71,7 @@ function Form() {
                     <select
                         id="categoria"
                         name="categoria"
-                        placeholder='Selecione uma categoria'
+                        placeholder="Selecione uma categoria"
                         value={formData.categoria}
                         onChange={handleChange}
                         required
@@ -117,23 +127,10 @@ function Form() {
                 </div>
 
                 <div className={styles.actions}>
-                    <button type="submit" className={styles.saveButton} onClick={''}>Guardar</button>
+                    <button type="submit" className={styles.saveButton}>Guardar</button>
                     <button type="button" className={styles.resetButton} onClick={handleReset}>Limpar</button>
                 </div>
             </form>
-
-            <div className={styles.cards}> 
-                {cards.map((card, index) => (
-                    <Card
-                        key={index}
-                        id={index}
-                        capa={card.imagem}
-                        titulo={card.titulo}
-                        categoria={card.categoria}
-                        descricao={card.descricao}
-                    />
-                ))}
-            </div>
         </div>
     );
 }

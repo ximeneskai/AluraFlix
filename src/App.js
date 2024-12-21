@@ -3,14 +3,17 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AppRoutes from './routes'; // Importando o arquivo de rotas
+import { CardProvider } from './context/CardContext';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <AppRoutes />  {/* As rotas serão inseridas aqui */}
-      <Footer />
-    </BrowserRouter>
+    <CardProvider>
+      <BrowserRouter>
+        <Header />
+        <AppRoutes />  {/* As rotas serão inseridas aqui */}
+        <Footer />
+      </BrowserRouter>
+    </CardProvider>
   );
 }
 
