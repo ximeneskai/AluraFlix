@@ -8,24 +8,24 @@ function Section({ titulo }) {
 
   // Mapeamento de cores para as categorias
   const categoriaCores = {
-    Romance: '#FF6347',    // Tomato
-    Comédia: '#FFD700',    // Gold
-    Terror: '#8B0000',     // Dark Red
-    Ação: '#228B22',       // Forest Green
-    Música: '#1E90FF',     // Dodger Blue
-    Drama: '#800080',      // Purple
-    Animação: '#FF4500',   // Orange Red
-    Suspense: '#00008B',   // Dark Blue
-    Infantil: '#FF1493',   // Deep Pink
-    Ficção: '#8A2BE2',     // Blue Violet
-    Fantasia: '#00FA9A',   // Medium Spring Green
-    Histórico: '#D2691E',  // Chocolate
-    Guerra: '#B22222',     // Firebrick
-    Mistério: '#A52A2A',   // Brown
-    Thriller: '#DC143C',   // Crimson
-    Policial: '#006400',   // Dark Green
-    Documentário: '#FFD700' // Gold (para documentários, pode ser uma cor distinta)
-  };
+    Romance: 'rgba(255, 99, 71, 0.5)',
+    Comédia: 'rgba(255, 215, 0, 0.5)',
+    Terror: 'rgba(139, 0, 0, 0.5)',
+    Ação: 'rgba(34, 139, 34, 0.5)',
+    Música: 'rgba(30, 144, 255, 0.5)',
+    Drama: 'rgba(128, 0, 128, 0.5)',
+    Animação: 'rgba(255, 69, 0, 0.5)',
+    Suspense: 'rgba(0, 0, 139, 0.5)',
+    Infantil: 'rgba(255, 20, 147, 0.5)',
+    Ficção: 'rgba(138, 43, 226, 0.5)',
+    Fantasia: 'rgba(0, 250, 154, 0.5)',
+    Histórico: 'rgba(214, 105, 30, 0.5)',
+    Guerra: 'rgba(178, 34, 34, 0.5)',
+    Mistério: 'rgba(165, 42, 42, 0.5)',
+    Thriller: 'rgba(220, 20, 60, 0.5)',
+    Policial: 'rgba(0, 100, 0, 0.5)',
+    Documentário: 'rgba(255, 215, 0, 0.5)'
+    };
 
   // Cor da categoria
   const corCategoria = categoriaCores[titulo] || '#FFFFFF'; // Padrão: branco, se a categoria não for encontrada

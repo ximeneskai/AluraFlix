@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styles from './Form.module.css';
-import Card from '../Card';
 import { useCards } from '../../context/CardContext';
 
 function Form() {
@@ -85,6 +84,7 @@ function Form() {
                         <option value="Animação">Animação</option>
                         <option value="Suspense">Suspense</option>
                         <option value="Infantil">Infantil</option>
+                        <option value="Documentário">Documentário</option>
                     </select>
                 </div>
 
