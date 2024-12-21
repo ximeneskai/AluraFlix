@@ -1,10 +1,11 @@
+import Form from '../../components/Form';
 import styles from './NewVideo.module.css'
 
 function NewVideo() {
-    return (
-        <>
-        
-        </>
+    return ( 
+        <section>
+            <Form />
+        </section>
     )
 }
 

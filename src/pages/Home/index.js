@@ -7,7 +7,6 @@ import styles from './Home.module.css'
 function Home() {
     return (
         <>
-            <Header />
             <Banner />
             <Section 
                 titulo={'FILMES'}
@@ -17,9 +16,7 @@ function Home() {
             />
             <Section 
             titulo={'NOVELAS'}
-            />
-            <Footer />
-        
+            />        
         </>
     )
 }

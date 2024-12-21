@@ -12,6 +12,7 @@ function Section({titulo}) {
             <Card />
             <Card />
             <Card />
+            <Card />
         </div>
     </section>
     )
