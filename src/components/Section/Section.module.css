@@ -1,6 +1,8 @@
 .container {
-    background-color: #262626;
+    background-color: #262626; /* Fallback */
     margin: 3em;
+    border-radius: 15px;
+    padding: 20px;
 }
 
 .carrossel {

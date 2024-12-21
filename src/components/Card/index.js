@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import styles from './Card.module.css';
 
-
-function Card({ titulo, imagem }) {
+function Card({ titulo, corCategoria, imagem }) {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={{ borderColor: corCategoria }}>
             <Link className={styles.link} to={''}>
                 <img 
                     src={imagem} 
@@ -28,4 +27,3 @@ function Card({ titulo, imagem }) {
 }
 
 export default Card;
-

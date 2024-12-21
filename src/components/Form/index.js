@@ -71,11 +71,11 @@ function Form() {
                     <select
                         id="categoria"
                         name="categoria"
-                        placeholder="Selecione uma categoria"
                         value={formData.categoria}
                         onChange={handleChange}
                         required
                     >
+                        <option value="">Selecione uma categoria</option>
                         <option value="Romance">Romance</option>
                         <option value="Comédia">Comédia</option>
                         <option value="Terror">Terror</option>
