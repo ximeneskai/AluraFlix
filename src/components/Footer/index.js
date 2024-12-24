@@ -2,9 +2,14 @@ import styles from './Footer.module.css'
 
 function Footer() {
     return (
-        <footer className={styles.footer}>
-        <img src='/assets/logo.png' alt='logo do AluraFlix'/>
-        </footer>
+        <>
+            <hr/>
+            <footer className={styles.footer}>
+            <img src='/assets/logo.png' alt='logo do AluraFlix'/>
+            </footer>
+        
+        </>
+        
     )
 }
 
