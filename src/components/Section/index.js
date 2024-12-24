@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import { useCards } from '../../context/CardContext'; // Importando o hook do contexto
 import Card from '../Card';
 import TitleClass from '../TitleClass';
+import ModalZoom from '../ModalZoom'; // Certifique-se de importar o modal
 import styles from './Section.module.css';
 
 function Section({ titulo }) {
-  const { cards } = useCards(); // Usando o hook para acessar os cards
+  const { cards, updateCard } = useCards(); // Adicione `updateCard` ao contexto se ainda não existir
+  const [modalAberto, setModalAberto] = useState(false);
+  const [cardSelecionado, setCardSelecionado] = useState(null);
 
   // Mapeamento de cores para as categorias
   const categoriaCores = {
@@ -24,21 +28,49 @@ function Section({ titulo }) {
     Mistério: 'rgba(165, 42, 42, 0.5)',
     Thriller: 'rgba(220, 20, 60, 0.5)',
     Policial: 'rgba(0, 100, 0, 0.5)',
-    Documentário: 'rgba(255, 215, 0, 0.5)'
-    };
+    Documentário: 'rgba(255, 215, 0, 0.5)',
+  };
 
   // Cor da categoria
   const corCategoria = categoriaCores[titulo] || '#FFFFFF'; // Padrão: branco, se a categoria não for encontrada
+
+  const abrirModal = (card) => {
+    setCardSelecionado(card);
+    setModalAberto(true);
+  };
+
+  const fecharModal = () => {
+    setModalAberto(false);
+    setCardSelecionado(null);
+  };
+
+  const salvarAlteracoes = (dadosAtualizados) => {
+    updateCard(cardSelecionado.id, dadosAtualizados); // Atualize o card no contexto
+    fecharModal();
+  };
 
   return (
     <section className={styles.container}>
       <TitleClass titulo={titulo} corCategoria={corCategoria} />
       <div className={styles.carrossel}>
         {/* Filtra os cards pela categoria e renderiza */}
-        {cards.filter(card => card.categoria === titulo).map((card, index) => (
-          <Card key={index} {...card} corCategoria={corCategoria} />
+        {cards.filter((card) => card.categoria === titulo).map((card, index) => (
+          <Card
+            key={index}
+            {...card}
+            corCategoria={corCategoria}
+            onEdit={abrirModal} // Passa a função para abrir o modal
+          />
         ))}
       </div>
+
+      {/* Renderiza o modal */}
+      <ModalZoom
+        isOpen={modalAberto}
+        onClose={fecharModal}
+        onSave={salvarAlteracoes}
+        cardData={cardSelecionado}
+      />
     </section>
   );
 }
