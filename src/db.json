@@ -1,0 +1,48 @@
+{
+    "filmes": [
+        {
+            "id": 1,
+            "titulo": "Homem Aranha",
+            "categoria": "Ação",
+            "descricao": "Depois de ser picado por uma aranha geneticamente modificada em uma demonstração científica, o jovem nerd Peter Parker ganha superpoderes. Inicialmente, ele pretende usá-los para para ganhar dinheiro, adotando o nome de Homem-Aranha e se apresentando em lutas de exibição. Porém, ao presenciar o assassinando de seu tio Ben e sentir-se culpado, Peter decide não mais usar seus poderes para proveito próprio e sim para enfrentar o mal, tendo como seu primeiro grande desafio o psicótico Duende Verde.",
+            "video": "https://www.youtube.com/watch?v=Ga8ZkXpfXN8",
+            "imagem": "https://upload.wikimedia.org/wikipedia/pt/1/14/Spide-Man_Poster.jpg"
+        },
+        {
+            "id": 2,
+            "titulo": "Medianeras",
+            "categoria": "Romance",
+            "descricao": "Martín e Mariana são seres solitários que moram em Buenos Aires e têm dificuldades em se relacionar com o mundo. Por mais que sempre se cruzem nas ruas, nunca se viram. Na busca de alguém que os compreenda, eles afogam mágoas e alegrias.",
+            "video": "https://www.youtube.com/watch?v=kmBzxutYLOA",
+            "imagem": "https://images.adsttc.com/media/images/50eb/3550/b3fc/4b25/d500/0085/large_jpg/medianeras-cartel.jpg?1361401773"
+
+        },
+        {
+            "id": 3,
+            "titulo": "Dançando no Escuro",
+            "categoria": "Drama",
+            "descricao": "Selma é uma imigrante checa e mãe solteira que trabalha em uma fábrica no interior dos Estados Unidos. Sua salvação é paixão pela música, especialmente os musicais clássicos de Hollywood. Selma está perdendo a visão e seu filho Gene pode sofrer o mesmo destino se ela não conseguir economizar dinheiro suficiente para fazer uma operação.",
+            "video": "https://www.youtube.com/watch?v=ILr2sYclMC4",
+            "imagem": "https://personaunesp.com.br/wp-content/uploads/2020/12/FOTO-1-1-1.jpg"
+
+        },
+        {
+            "id": 4,
+            "titulo": "Matilda",
+            "categoria": "Infantil",
+            "descricao": "Matilda é uma criança brilhante que cresceu ignorada pelos pais, a ponto de esquecerem de matriculá-la na escola. Quando a menina descobre que possui poderes mágicos e seu pai a manda estudar, ela precisa proteger os colegas da malvada diretora.",
+            "video": "https://www.youtube.com/watch?v=simTHZkOPv8",
+            "imagem": "https://br.web.img3.acsta.net/pictures/210/123/21012312_20130613132958221.jpg"
+
+        },
+        {
+            "id": 5,
+            "titulo": "X-Men: Dias de um futuro esquecido",
+            "categoria": "Ação",
+            "descricao": "O Dr. Bolivar Trask acredita que os mutantes são uma ameaça para a humanidade. Ele desenvolve gigantescos robôs chamados Sentinelas, que perseguem impiedosamente os mutantes. Os poucos sobreviventes precisam viver escondidos. Wolverine viaja no tempo para procurar os jovens Xavier e Magneto e impedir que eles sejam caçados e aniquilados no futuro.",
+            "video": "https://www.youtube.com/watch?v=GP1G-XKxleM",
+            "imagem": "https://upload.wikimedia.org/wikipedia/pt/f/f8/X-Men_Dias_Futuro_Esquecido_2014.jpg"
+
+        }
+    ]
+}

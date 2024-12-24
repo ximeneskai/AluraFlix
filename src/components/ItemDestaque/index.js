@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./ItemDestaque.module.css";
+import TitleClass from '../TitleClass';
 
-const ItemDestaque = ({ card }) => {
+const ItemDestaque = ({ card, titulo, corCategoria }) => {
+
+
   return (
     <div className={styles.itemDestaque}>
       <div className={styles.details}>
@@ -9,7 +12,7 @@ const ItemDestaque = ({ card }) => {
         <p>{card.descricao}</p>
         <a href={card.video} target="_blank" rel="noopener noreferrer" className={styles.link}>
           Assistir agora
-        </a>
+        </a> 
       </div>
       <div className={styles.capa}>
         <img src={card.imagem} alt={card.titulo} className={styles.image} />
