@@ -6,7 +6,7 @@ import ModalZoom from '../ModalZoom'; // Certifique-se de importar o modal
 import styles from './Section.module.css';
 
 function Section({ titulo }) {
-  const { cards, updateCard } = useCards(); // Adicione `updateCard` ao contexto se ainda não existir
+  const { cards, updateCard, deleteCard } = useCards(); // Adicione `updateCard` ao contexto se ainda não existir
   const [modalAberto, setModalAberto] = useState(false);
   const [cardSelecionado, setCardSelecionado] = useState(null);
 
@@ -59,7 +59,8 @@ function Section({ titulo }) {
             key={index}
             {...card}
             corCategoria={corCategoria}
-            onEdit={abrirModal} // Passa a função para abrir o modal
+            onEdit={abrirModal} 
+            deleteCard={deleteCard}
           />
         ))}
       </div>

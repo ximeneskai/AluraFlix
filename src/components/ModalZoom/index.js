@@ -20,10 +20,10 @@ function ModalZoom({ isOpen, onClose, onSave, cardData }) {
         isOpen && (
             <div className={styles.overlay}>
                 <div className={styles.modal}>
-                    <h2>Editar Filme</h2>
+                    <h1>EDIÇÃO DO VÍDEO</h1>
                     
                     <label>
-                        <strong>Título:</strong>
+                        <h2>Título:</h2>
                         <input 
                             type="text" 
                             value={titulo} 
@@ -32,16 +32,34 @@ function ModalZoom({ isOpen, onClose, onSave, cardData }) {
                     </label>
                     
                     <label>
-                        <strong>Descrição:</strong>
+                        <h2>Descrição:</h2>
                         <textarea
                             rows="3"
                             value={descricao}
                             onChange={(e) => setDescricao(e.target.value)}
                         />
                     </label>
+                       
+                    <label>
+                        <h2>URL do Vídeo:</h2>
+                        <input 
+                            type="text" 
+                            value={video} 
+                            onChange={(e) => setVideo(e.target.value)} 
+                        />
+                    </label>
                     
                     <label>
-                        <strong>Categoria:</strong>
+                        <h2>URL da Imagem:</h2>
+                        <input 
+                            type="text" 
+                            value={imagem} 
+                            onChange={(e) => setImagem(e.target.value)} 
+                        />
+                    </label>
+
+                    <label>
+                        <h2>Categoria:</h2>
                         <select 
                             value={categoria} 
                             onChange={(e) => setCategoria(e.target.value)}
@@ -67,27 +85,9 @@ function ModalZoom({ isOpen, onClose, onSave, cardData }) {
                         </select>
                     </label>
                     
-                    <label>
-                        <strong>URL do Vídeo:</strong>
-                        <input 
-                            type="text" 
-                            value={video} 
-                            onChange={(e) => setVideo(e.target.value)} 
-                        />
-                    </label>
-                    
-                    <label>
-                        <strong>URL da Imagem:</strong>
-                        <input 
-                            type="text" 
-                            value={imagem} 
-                            onChange={(e) => setImagem(e.target.value)} 
-                        />
-                    </label>
-                    
                     <div className={styles.buttons}>
+                    <button onClick={handleSave} className={styles.saveButton}>Salvar</button>
                         <button onClick={onClose} className={styles.cancelButton}>Cancelar</button>
-                        <button onClick={handleSave} className={styles.saveButton}>Salvar</button>
                     </div>
                 </div>
             </div>
