@@ -4,7 +4,9 @@ import { createContext, useContext, useEffect, useState } from "react";
 const CardContext = createContext();
 
 // Hook para usar o contexto
-export const useCards = () => useContext(CardContext);
+export const useCards = () => {
+    return useContext(CardContext);
+}
 
 export const CardProvider = ({ children }) => {
     const [cards, setCards] = useState([]);
@@ -30,11 +32,11 @@ export const CardProvider = ({ children }) => {
             });
     };
 
-    const updateCard = (id, updatedCard) => {
+    const updateCard = (id, cardAtualizado) => {
         return fetch(`http://localhost:3001/filmes/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(updatedCard),
+            body: JSON.stringify(cardAtualizado),
         })
             .then((response) => response.json())
             .then((data) => {

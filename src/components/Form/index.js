@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 function Form() {
     const { id } = useParams(); // Pegue o ID do card pela URL, se aplicável
     const navigate = useNavigate();
-    const { cards, addCard, updateCard } = useCards();
+    const { cards, addCard, salvarAlteracoes } = useCards();
     const [formData, setFormData] = useState({
         titulo: '',
         categoria: '',
@@ -37,7 +37,7 @@ function Form() {
         e.preventDefault();
         if (id) {
             // Atualizar um card existente
-            await updateCard(id, formData);
+            await salvarAlteracoes(id, formData);
         } else {
             // Criar um novo card
             await addCard(formData);
@@ -140,7 +140,7 @@ function Form() {
                 </div>
 
                 <div className={styles.actions}>
-                    <button type="submit" className={styles.saveButton}>Guardar</button>
+                    <button type="submit" className={styles.saveButton} onClick={salvarAlteracoes}>Guardar</button>
                     <button type="button" className={styles.resetButton} onClick={handleReset}>Limpar</button>
                 </div>
             </form>

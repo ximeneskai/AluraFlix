@@ -44,18 +44,19 @@ function Section({ titulo }) {
     setCardSelecionado(null);
   };
 
-  const salvarAlteracoes = async (dadosAtualizados) => {
-    try {
-        const sucesso = await updateCard(cardSelecionado.id, dadosAtualizados);
-        if (sucesso) {
-            alert('Card atualizado com sucesso!');
-            fecharModal();
-        } else {
-            alert('Erro ao atualizar o card. Tente novamente.');
-        }
-    } catch (erro) {
-        console.error('Erro ao atualizar o card:', erro);
-        alert('Erro ao atualizar o card. Verifique os logs.');
+  const salvarAlteracoes = (dadosAtualizados) => {
+    if (cardSelecionado?.id) {
+        updateCard(cardSelecionado.id, dadosAtualizados)
+            .then(() => {
+                alert('Card atualizado com sucesso!');
+                fecharModal();
+            })
+            .catch((erro) => {
+                console.error('Erro ao atualizar o card:', erro);
+                alert('Erro ao atualizar o card. Tente novamente.');
+            });
+    } else {
+        console.error('Card selecionado não tem ID:', cardSelecionado);
     }
 };
 
