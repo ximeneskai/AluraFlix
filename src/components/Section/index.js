@@ -44,10 +44,20 @@ function Section({ titulo }) {
     setCardSelecionado(null);
   };
 
-  const salvarAlteracoes = (dadosAtualizados) => {
-    updateCard(cardSelecionado.id, dadosAtualizados); // Atualize o card no contexto
-    fecharModal();
-  };
+  const salvarAlteracoes = async (dadosAtualizados) => {
+    try {
+        const sucesso = await updateCard(cardSelecionado.id, dadosAtualizados);
+        if (sucesso) {
+            alert('Card atualizado com sucesso!');
+            fecharModal();
+        } else {
+            alert('Erro ao atualizar o card. Tente novamente.');
+        }
+    } catch (erro) {
+        console.error('Erro ao atualizar o card:', erro);
+        alert('Erro ao atualizar o card. Verifique os logs.');
+    }
+};
 
   return (
     <section className={styles.container}>

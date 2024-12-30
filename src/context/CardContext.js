@@ -1,6 +1,10 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import { createContext, useContext, useEffect, useState } from "react";
 
+// Criação do contexto
 const CardContext = createContext();
+
+// Hook para usar o contexto
+export const useCards = () => useContext(CardContext);
 
 export const CardProvider = ({ children }) => {
     const [cards, setCards] = useState([]);
@@ -10,46 +14,50 @@ export const CardProvider = ({ children }) => {
             .then((response) => response.json())
             .then((data) => setCards(data))
             .catch((error) => console.error('Erro ao buscar os filmes:', error));
-    }, []
-    );
+    }, []);
 
     const addCard = (newCard) => {
-        fetch('http://localhost:3001/filmes', {
+        return fetch('http://localhost:3001/filmes', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newCard),
         })
-        .then((response) => response.json())
-        .then((data) => setCards((prevCards) => [...prevCards, data]));
+            .then((response) => response.json())
+            .then((data) => {
+                setCards((prevCards) => [...prevCards, data]);
+                alert('Card adicionado com sucesso!');
+                return true; // Indica sucesso
+            });
     };
 
     const updateCard = (id, updatedCard) => {
-        fetch(`http://localhost:3001/filmes/${id}`, {
+        return fetch(`http://localhost:3001/filmes/${id}`, {
             method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updatedCard),
         })
-        .then((response) => response.json())
-        .then((data) => 
-            setCards((prevCards) => 
-                prevCards.map(
-                    (card) => (card.id === id ? data : card))));
+            .then((response) => response.json())
+            .then((data) => {
+                setCards((prevCards) =>
+                    prevCards.map((card) => (card.id === id ? data : card))
+                );
+                alert('Card atualizado com sucesso!');
+                return true; // Indica sucesso
+            });
     };
 
     const deleteCard = (id) => {
-        fetch(`http://localhost:3001/filmes/${id}`, { method: 'DELETE' })
-            .then(() =>
-                setCards((prevCards) => prevCards.filter((card) => card.id !== id))
-            );
+        return fetch(`http://localhost:3001/filmes/${id}`, { method: 'DELETE' })
+            .then(() => {
+                setCards((prevCards) => prevCards.filter((card) => card.id !== id));
+                alert('Card deletado com sucesso!');
+                return true; // Indica sucesso
+            });
     };
 
     return (
         <CardContext.Provider value={{ cards, addCard, updateCard, deleteCard }}>
             {children}
         </CardContext.Provider>
-    )
-}
-
-export const useCards = () => useContext(CardContext);
+    );
+};

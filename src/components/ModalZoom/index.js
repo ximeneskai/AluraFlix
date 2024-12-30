@@ -1,21 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './ModalZoom.module.css';
 
 function ModalZoom({ isOpen, onClose, onSave, cardData }) {
-    // Os hooks agora são sempre chamados, respeitando as regras do React
-    const [titulo, setTitulo] = useState(cardData?.titulo || '');
-    const [imagem, setImagem] = useState(cardData?.imagem || '');
-    const [descricao, setDescricao] = useState(cardData?.descricao || '');
-    const [categoria, setCategoria] = useState(cardData?.categoria || '');
-    const [video, setVideo] = useState(cardData?.video || '');
+    const [titulo, setTitulo] = useState('');
+    const [imagem, setImagem] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [categoria, setCategoria] = useState('');
+    const [video, setVideo] = useState('');
 
-    const handleSave = () => {
-        // Salva as alterações feitas no modal
-        onSave({ titulo, imagem, descricao, categoria, video });
-        onClose(); // Fecha o modal após salvar
+    // Atualiza os campos do formulário quando o cardData muda
+    useEffect(() => {
+        if (cardData) {
+            setTitulo(cardData.titulo || '');
+            setImagem(cardData.imagem || '');
+            setDescricao(cardData.descricao || '');
+            setCategoria(cardData.categoria || '');
+            setVideo(cardData.video || '');
+        }
+    }, [cardData]);
+
+    const handleSave = async () => {
+        const updatedCard = { 
+            ...cardData, 
+            titulo, 
+            imagem, 
+            descricao, 
+            categoria, 
+            video 
+        };
+
+        const success = await onSave(updatedCard);
+        if (success) {
+            onClose(); // Fecha o modal apenas se salvar com sucesso
+        } else {
+            alert('Erro ao salvar o card. Tente novamente.');
+        }
     };
 
-    // Renderiza o modal apenas se isOpen for true
     return (
         isOpen && (
             <div className={styles.overlay}>
@@ -24,10 +45,10 @@ function ModalZoom({ isOpen, onClose, onSave, cardData }) {
                     
                     <label>
                         <h2>Título:</h2>
-                        <input 
-                            type="text" 
-                            value={titulo} 
-                            onChange={(e) => setTitulo(e.target.value)} 
+                        <input
+                            type="text"
+                            value={titulo}
+                            onChange={(e) => setTitulo(e.target.value)}
                         />
                     </label>
                     
@@ -39,29 +60,29 @@ function ModalZoom({ isOpen, onClose, onSave, cardData }) {
                             onChange={(e) => setDescricao(e.target.value)}
                         />
                     </label>
-                       
+                    
                     <label>
                         <h2>URL do Vídeo:</h2>
-                        <input 
-                            type="text" 
-                            value={video} 
-                            onChange={(e) => setVideo(e.target.value)} 
+                        <input
+                            type="text"
+                            value={video}
+                            onChange={(e) => setVideo(e.target.value)}
                         />
                     </label>
                     
                     <label>
                         <h2>URL da Imagem:</h2>
-                        <input 
-                            type="text" 
-                            value={imagem} 
-                            onChange={(e) => setImagem(e.target.value)} 
+                        <input
+                            type="text"
+                            value={imagem}
+                            onChange={(e) => setImagem(e.target.value)}
                         />
                     </label>
 
                     <label>
                         <h2>Categoria:</h2>
-                        <select 
-                            value={categoria} 
+                        <select
+                            value={categoria}
                             onChange={(e) => setCategoria(e.target.value)}
                         >
                             <option value="">Selecione uma categoria</option>
@@ -86,7 +107,7 @@ function ModalZoom({ isOpen, onClose, onSave, cardData }) {
                     </label>
                     
                     <div className={styles.buttons}>
-                    <button onClick={handleSave} className={styles.saveButton}>Salvar</button>
+                        <button onClick={handleSave} className={styles.saveButton}>Salvar</button>
                         <button onClick={onClose} className={styles.cancelButton}>Cancelar</button>
                     </div>
                 </div>

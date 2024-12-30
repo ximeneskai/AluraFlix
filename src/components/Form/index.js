@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Form.module.css';
 import { useCards } from '../../context/CardContext';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function Form() {
+    const { id } = useParams(); // Pegue o ID do card pela URL, se aplicável
+    const navigate = useNavigate();
+    const { cards, addCard, updateCard } = useCards();
     const [formData, setFormData] = useState({
         titulo: '',
         categoria: '',
@@ -11,45 +15,54 @@ function Form() {
         descricao: ''
     });
 
-    const { addCard } = useCards();
+    // Preenche o formulário ao carregar o card selecionado
+    useEffect(() => {
+        if (id) {
+            const cardToEdit = cards.find((card) => card.id === parseInt(id, 10));
+            if (cardToEdit) {
+                setFormData(cardToEdit);
+            }
+        }
+    }, [id, cards]);
 
-    // Função para lidar com as mudanças nos campos do formulário
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prevData => ({
+        setFormData((prevData) => ({
             ...prevData,
             [name]: value
         }));
     };
 
-    // Função para adicionar o card ao estado
-    const handleSubmit = (e) => {
-        e.preventDefault(); // Previne o comportamento padrão do formulário (recarregar a página)
-        addCard(formData);
-        setFormData({
-            titulo: "",
-            categoria: "",
-            imagem: "",
-            video: "",
-            descricao: ""
-        });
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (id) {
+            // Atualizar um card existente
+            await updateCard(id, formData);
+        } else {
+            // Criar um novo card
+            await addCard(formData);
+        }
+        navigate('/'); // Redireciona para a home após salvar
     };
 
-    // Função para resetar o formulário
     const handleReset = () => {
         setFormData({
-            titulo: "",
-            categoria: "",
-            imagem: "",
-            video: "",
-            descricao: ""
+            titulo: '',
+            categoria: '',
+            imagem: '',
+            video: '',
+            descricao: ''
         });
     };
 
     return (
         <div className={styles.container}>
-            <h1 className={styles.title}>NOVO VÍDEO</h1>
-            <p className={styles.subtitle}>Complete o formulário para criar um novo card de vídeo.</p>
+            <h1 className={styles.title}>{id ? 'EDITAR VÍDEO' : 'NOVO VÍDEO'}</h1>
+            <p className={styles.subtitle}>
+                {id
+                    ? 'Atualize as informações do card de vídeo.'
+                    : 'Complete o formulário para criar um novo card de vídeo.'}
+            </p>
             
             <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.field}>
