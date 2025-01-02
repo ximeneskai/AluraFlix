@@ -35,30 +35,31 @@ function Section({ titulo }) {
   const corCategoria = categoriaCores[titulo] || '#FFFFFF'; // Padrão: branco, se a categoria não for encontrada
 
   const abrirModal = (card) => {
+    console.log('Card selecionado:', card); // Debug para verificar o conteúdo do card
     setCardSelecionado(card);
     setModalAberto(true);
-  };
+};
 
   const fecharModal = () => {
     setModalAberto(false);
     setCardSelecionado(null);
   };
 
-  const salvarAlteracoes = (dadosAtualizados) => {
-    if (cardSelecionado?.id) {
-        updateCard(cardSelecionado.id, dadosAtualizados)
-            .then(() => {
-                alert('Card atualizado com sucesso!');
-                fecharModal();
-            })
-            .catch((erro) => {
-                console.error('Erro ao atualizar o card:', erro);
-                alert('Erro ao atualizar o card. Tente novamente.');
-            });
-    } else {
+  const salvarAlteracoes = async (dadosAtualizados) => {
+    if (!cardSelecionado || !cardSelecionado.id) {
         console.error('Card selecionado não tem ID:', cardSelecionado);
+        alert('Erro ao salvar: card inválido.');
+        return;
     }
-};
+
+    const sucesso = await updateCard(cardSelecionado.id, dadosAtualizados);
+    if (sucesso) {
+        alert('Card atualizado com sucesso!');
+        fecharModal();
+    } else {
+        alert('Erro ao atualizar o card. Tente novamente.');
+    }
+  };
 
   return (
     <section className={styles.container}>

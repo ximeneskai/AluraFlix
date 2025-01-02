@@ -140,7 +140,7 @@ function Form() {
                 </div>
 
                 <div className={styles.actions}>
-                    <button type="submit" className={styles.saveButton} onClick={salvarAlteracoes}>Guardar</button>
+                    <button type="submit" className={styles.saveButton}>Guardar</button>
                     <button type="button" className={styles.resetButton} onClick={handleReset}>Limpar</button>
                 </div>
             </form>

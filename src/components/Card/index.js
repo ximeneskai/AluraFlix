@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Card.module.css';
 
-function Card({ titulo, categoria, corCategoria, imagem, onEdit, deleteCard, id, video}) {
+function Card({ corCategoria, onEdit, deleteCard, id, titulo, categoria, imagem, video, descricao}) {
   return (
     <div className={styles.container} style={{ borderColor: corCategoria }}>
       <Link className={styles.link} to={`${video}`}>
@@ -16,7 +16,7 @@ function Card({ titulo, categoria, corCategoria, imagem, onEdit, deleteCard, id,
         </button>
         <button
           className={styles.btnEdit}
-          onClick={() => onEdit({ titulo, categoria, imagem })}
+          onClick={() => onEdit({ id, titulo, categoria, imagem, video, descricao })}
         >
           <img src='/assets/edit.png' className={styles.icon} alt='Icone de Editar' />
           EDITAR

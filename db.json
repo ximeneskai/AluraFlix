@@ -26,27 +26,27 @@
     },
     {
       "id": "4",
-      "titulo": "X-Men: Dias de um futuro esquecido",
+      "titulo": "X-Men: Dias de um Futuro Esquecido",
       "categoria": "Ação",
-      "descricao": "O Dr. Bolivar Trask acredita que os mutantes são uma ameaça para a humanidade. Ele desenvolve gigantescos robôs chamados Sentinelas, que perseguem impiedosamente os mutantes. Os poucos sobreviventes precisam viver escondidos. Wolverine viaja no tempo para procurar os jovens Xavier e Magneto e impedir que eles sejam caçados e aniquilados no futuro.",
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/f/f8/X-Men_Dias_Futuro_Esquecido_2014.jpg",
       "video": "https://www.youtube.com/watch?v=GP1G-XKxleM",
-      "imagem": "https://upload.wikimedia.org/wikipedia/pt/f/f8/X-Men_Dias_Futuro_Esquecido_2014.jpg"
+      "descricao": "O Dr. Bolivar Trask acredita que os mutantes são uma ameaça para a humanidade. Ele desenvolve gigantescos robôs chamados Sentinelas, que perseguem impiedosamente os mutantes. Os poucos sobreviventes precisam viver escondidos. Wolverine viaja no tempo para procurar os jovens Xavier e Magneto e impedir que eles sejam caçados e aniquilados no futuro."
     },
     {
       "id": "5",
-      "titulo": "João e Maria Caçadores de Bruxas",
+      "titulo": "João e Maria: Caçadores de Bruxas",
       "categoria": "Ação",
-      "descricao": "João e Maria foram abandonados pelos pais na sombria floresta e acabam indo parar na casa de uma malvada bruxa. Eliminaram a malvada e viraram verdadeiros exterminadores de criaturas do mal. Após o desaparecimento de várias crianças, os dois já adultos são contratados pelas autoridades locais para desvendar o mistério. Só que eles não imaginavam que essa nova missão iria colocá-los diante da terrível Bruxa Negra.",
+      "imagem": "https://br.web.img3.acsta.net/medias/nmedia/18/93/11/58/20392738.jpg",
       "video": "https://www.youtube.com/watch?v=Xs3ss61iyQs",
-      "imagem": "https://br.web.img3.acsta.net/medias/nmedia/18/93/11/58/20392738.jpg"
+      "descricao": "João e Maria foram abandonados pelos pais na sombria floresta e acabam indo parar na casa de uma malvada bruxa. Eliminaram a malvada e viraram verdadeiros exterminadores de criaturas do mal. Após o desaparecimento de várias crianças, os dois já adultos são contratados pelas autoridades locais para desvendar o mistério. Só que eles não imaginavam que essa nova missão iria colocá-los diante da terrível Bruxa Negra."
     },
     {
       "id": "6",
-      "titulo": "Tropa de Elite 2: O Inimigo Agora é Outro",
+      "titulo": "Tropa de Elite 2: inimigo agora é outro",
       "categoria": "Ação",
-      "descricao": "Depois de uma operação fracassada, Nascimento é afastado do Bope e agora trabalha como subsecretário de Inteligência na Secretaria de Segurança Pública do Rio de Janeiro. No novo cargo, o ex-capitão é arrastado para uma disputa política sangrenta que envolve funcionários do governo e grupos paramilitares.",
+      "imagem": "https://media.fstatic.com/rkzT72QmT4HTgUMHhl2dKxHMIUE=/322x478/smart/filters:format(webp)/media/movies/covers/2023/01/imagem_2023-01-16_204812329.png",
       "video": "https://www.youtube.com/watch?v=J9ytvIKbQuo",
-      "imagem": "https://media.fstatic.com/rkzT72QmT4HTgUMHhl2dKxHMIUE=/322x478/smart/filters:format(webp)/media/movies/covers/2023/01/imagem_2023-01-16_204812329.png"
+      "descricao": "Depois de uma operação fracassada, Nascimento é afastado do Bope e agora trabalha como subsecretário de Inteligência na Secretaria de Segurança Pública do Rio de Janeiro. No novo cargo, o ex-capitão é arrastado para uma disputa política sangrenta que envolve funcionários do governo e grupos paramilitares."
     },
     {
       "id": "7",
@@ -114,11 +114,11 @@
     },
     {
       "id": "15",
-      "titulo": "Um amor para recordar",
+      "titulo": "Um Amor Para Recordar",
       "categoria": "Romance",
-      "descricao": "Um jovem delinquente do ensino médio é obrigado a ser o tutor de uma escola de baixa renda. Lá, ele se apaixona pela filha do pastor e vive uma paixão cheia de diferenças e surpresas.",
+      "imagem": "https://br.web.img3.acsta.net/medias/nmedia/18/94/82/78/20359454.jpg",
       "video": "https://www.youtube.com/watch?v=UFIFTJN43mc",
-      "imagem": "https://br.web.img3.acsta.net/medias/nmedia/18/94/82/78/20359454.jpg"
+      "descricao": "Um jovem delinquente do ensino médio é obrigado a ser o tutor de uma escola de baixa renda. Lá, ele se apaixona pela filha do pastor e vive uma paixão cheia de diferenças e surpresas."
     },
     {
       "id": "16",
@@ -154,11 +154,59 @@
     },
     {
       "id": "20",
-      "titulo": "teste",
+      "titulo": "Alice no País das Maravilhas",
+      "categoria": "Animação",
+      "imagem": "https://br.web.img2.acsta.net/pictures/14/02/27/19/01/345052.jpg",
+      "video": "https://www.youtube.com/watch?v=b1oC3yCdikY",
+      "descricao": "Alice é uma garota curiosa e cansada da monotonia de sua vida. Um dia, ao seguir o apressado e misterioso Coelho Branco até uma toca, ela acaba entrando no País das Maravilhas. Lá, ela conhece diversos seres incríveis, como o peculiar Chapeleiro Maluco, o misterioso Mestre Gato, a Lagarta e a tirana Rainha de Copas."
+    },
+    {
+      "id": "21",
+      "titulo": "Jester: A Morte Sorri",
+      "categoria": "Terror",
+      "imagem": "https://m.media-amazon.com/images/S/pv-target-images/9902f3140d73ac50341080b783b9ba5e8ace32f88cd88f9864541b65a82763a3.png",
+      "video": "https://www.youtube.com/watch?v=oOzCdIWsTRo",
+      "descricao": "Depois da recente morte do pai, duas irmãs são perseguidas por um ser maligno conhecido como \"O Jester\". Agora, a entidade maligna começa a atormentar os habitantes de uma pequena cidade na noite de Halloween."
+    },
+    {
+      "id": "22",
+      "titulo": "Ela Dança, Eu Danço 3",
+      "categoria": "Música",
+      "imagem": "https://br.web.img3.acsta.net/medias/nmedia/18/90/37/67/20093741.JPG",
+      "video": "https://www.youtube.com/watch?v=ByC7DHxszxg",
+      "descricao": "O mundo da dança de rua de Nova York é o cenário para a história dos talentosos dançarinos Luke e Natalie. A dupla se une a um calouro da Universidade de Nova York chamado Moose para uma competição de hip-hop que mudará suas vidas para sempre."
+    },
+    {
+      "id": "23",
+      "titulo": "Pânico 4",
+      "categoria": "Terror",
+      "imagem": "https://javiuesse.wordpress.com/wp-content/uploads/2011/04/pc3a2nico-4.jpg",
+      "video": "https://www.youtube.com/watch?v=knovvPSPMSE",
+      "descricao": "Faz muitos anos que o assassino \"Ghostface\" deixou um rastro mortal pela cidade de Woodsboro. A fim de superar o trauma desses terríveis acontecimentos, Sidney Prescott escreveu um livro de auto-ajuda. Ela retorna à Woodsboro para lançar seu livro e reencontra os velhos amigos Gale Weathers e o Xerife Dewey. No entanto, a chegada de Sidney também provoca o retorno de \"Ghostface\", colocando Sidney e todos que ama em perigo."
+    },
+    {
+      "id": "24",
+      "titulo": "Invasão Zumbi",
+      "categoria": "Suspense",
+      "imagem": "https://m.media-amazon.com/images/M/MV5BMTkwOTQ4OTg0OV5BMl5BanBnXkFtZTgwMzQyOTM0OTE@._V1_.jpg",
+      "video": "https://www.youtube.com/watch?v=Di3ZeLtdqMY",
+      "descricao": "A Coreia do Sul decreta estado de emergência após um vírus desconhecido tomar conta do país. Algumas pessoas tentam fugir de zumbis e ficam presas em um trem-bala que está a caminho de Busan, a única cidade que não foi afetada pelo vírus."
+    },
+    {
+      "id": "25",
+      "titulo": "Deu a Louca nos Bichos ",
+      "categoria": "Comédia",
+      "imagem": "https://br.web.img3.acsta.net/medias/nmedia/18/87/32/52/19874332.jpg",
+      "video": "https://www.youtube.com/watch?v=IhmDhJCp8H8",
+      "descricao": "Dan Sanders assume o trabalho de supervisão do projeto de um suposto condomínio de casas sustentáveis nas florestas do Oregon. Ele acredita que o grande desafio será ajudar a família cosmopolita a se ajustar com a vida no campo e simultaneamente deixar o chefe feliz. Mas os animais da floresta descobrem que ele vai destruir seu habitat, e uma verdadeira batalha entre o homem e a natureza tem início: castores, ursos e raposas unem forças para enlouquecer Dan e a família."
+    },
+    {
+      "id": "26",
+      "titulo": "O Homem Do Futuro",
       "categoria": "Romance",
-      "imagem": "tete",
-      "video": "tete",
-      "descricao": "tetete"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYFkUYJIC4WOLCkwVa9vBdeQieZDtZDJ-_ug&s",
+      "video": "https://www.youtube.com/watch?v=dypCAkxGKy4&t=1s",
+      "descricao": "Zero é um cientista ridicularizado cuja última invenção o levou ao passado, lhe dando a chance de refazer sua vida. De volta à época de faculdade, ele reencontra Helena, sua paixão, mas acaba interferindo em acontecimentos do futuro. Agora, Zero precisa consertar o futuro sem perder Helena de novo."
     }
   ]
 }

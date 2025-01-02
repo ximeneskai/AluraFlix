@@ -31,20 +31,35 @@ export const CardProvider = ({ children }) => {
                 return true; // Indica sucesso
             });
     };
+    
 
     const updateCard = (id, cardAtualizado) => {
+        console.log('ID enviado para atualização:', id); // Verifique o ID
+        console.log('Dados enviados:', cardAtualizado);
+    
         return fetch(`http://localhost:3001/filmes/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(cardAtualizado),
         })
-            .then((response) => response.json())
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Erro ao atualizar: ${response.statusText}`);
+                }
+                return response.json();
+            })
             .then((data) => {
                 setCards((prevCards) =>
                     prevCards.map((card) => (card.id === id ? data : card))
                 );
+                console.log('Card atualizado com sucesso:', data);
                 alert('Card atualizado com sucesso!');
                 return true; // Indica sucesso
+            })
+            .catch((error) => {
+                console.error('Erro na atualização:', error.message);
+                alert('Erro ao atualizar o card. Por favor, tente novamente.');
+                return false; // Indica falha
             });
     };
 

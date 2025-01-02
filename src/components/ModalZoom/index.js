@@ -13,9 +13,9 @@ function ModalZoom({ isOpen, onClose, onSave, cardData }) {
         if (cardData) {
             setTitulo(cardData.titulo || '');
             setImagem(cardData.imagem || '');
-            setDescricao(cardData.descricao || '');
+            setDescricao(cardData.descricao || ''); 
             setCategoria(cardData.categoria || '');
-            setVideo(cardData.video || '');
+            setVideo(cardData.video || ''); 
         }
     }, [cardData]);
 
